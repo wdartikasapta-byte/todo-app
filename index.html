@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    
+
+<div class="card">
+
+  <div class="header">
+    <h2 class="title">
+      <i class="bi bi-list-check"></i> To-Do List
+    </h2>
+  </div>
+
+  <!-- Theme -->
+  <div class="theme-select">
+    <label>Theme:</label>
+    <select onchange="setTheme(this.value)">
+      <option value="">Default</option>
+      <option value="blue-theme">Blue</option>
+      <option value="purple-theme">Purple</option>
+      <option value="peach-theme">Peach</option>
+    </select>
+  </div>
+
+  <!-- TOP -->
+  <div class="top-section">
+    <div class="date-box">
+      <p id="day"></p>
+      <p id="dateNum"></p>
+      <p id="month"></p>
+    </div>
+
+    <div class="progress-section">
+      <h4>Progress:</h4>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p id="progressText">0 / 0 tasks done</p>
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <div class="input-group">
+    <input type="text" id="taskInput" placeholder="Input your task!">
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  <div class="filters">
+    <button onclick="setFilter('all')">All</button>
+    <button onclick="setFilter('active')">Active</button>
+    <button onclick="setFilter('completed')">Completed</button>
+  </div>
+
+  <!-- LIST -->
+  <h5>My Tasks:</h5>
+  <ul id="taskList"></ul>
+
+</div>
+
+<script src="scripts.js"></script>
 </body>
 </html>

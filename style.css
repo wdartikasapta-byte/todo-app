@@ -1,0 +1,289 @@
+:root {
+  --bg-main: #f8f3f6;
+  --card-bg: #fffafb;
+  --olive: #c9cf8a;
+  --olive-dark: #b7be72;
+  --pink: #e97c9d;
+  --pink-dark: #d85d86;
+  --gray: #d9d9df;
+
+  --text-strong: #3a3a3a;
+  --text-soft: #6b6b6b;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background: var(--bg-main);
+  font-family: 'Poppins', sans-serif;
+
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+
+  color: var(--text-soft);
+}
+
+/* CARD */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 20px;
+
+  width: 100%;
+  max-width: 400px; 
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.title i {
+  color: var(--pink);
+}
+
+/* TOP */
+.top-section {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+/* DATE */
+.date-box {
+  flex: 1;
+  background: var(--olive);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  color: #5a3e36;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* PROGRESS */
+.progress-section {
+  flex: 1;
+}
+
+.progress-bar {
+  background: var(--gray);
+  border-radius: 10px;
+  height: 10px;
+}
+
+.progress-fill {
+  background: var(--olive-dark);
+  height: 10px;
+  width: 0%;
+  border-radius: 10px;
+}
+
+/* INPUT */
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--olive-dark);
+}
+
+button {
+  background: var(--pink);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* LIST */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--olive);
+  padding: 10px;
+  border-radius: 15px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TASK */
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* FILTER */
+.filters {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.filters button {
+  flex: 1;
+  padding: 6px;
+  border-radius: 10px;
+  background: var(--olive);
+}
+
+.filters button.active {
+  background: var(--pink);
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .top-section {
+    flex-direction: column;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 500px;
+  }
+
+  .top-section {
+    flex-direction: column;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 420px;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+
+  transform: translate(-50%, -20px);
+
+  background: var(--pink);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  z-index: 9999; 
+}
+
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ================= THEME GRADIENT FIX ================= */
+
+
+body.blue-theme {
+  --bg-main: linear-gradient(135deg, #dbeafe, #f0f9ff);
+
+  --card-bg: linear-gradient(135deg, #ffffff, #eef6ff);
+
+  --olive: #bfdbfe;
+  --olive-dark: #93c5fd;
+
+  --pink: #60a5fa;
+  --pink-dark: #3b82f6;
+
+  --text-strong: #1e3a5f;
+}
+
+
+body.purple-theme {
+  --bg-main: linear-gradient(135deg, #ede9fe, #faf5ff);
+
+  --card-bg: linear-gradient(135deg, #ffffff, #f5f3ff);
+
+  --olive: #ddd6fe;
+  --olive-dark: #c4b5fd;
+
+  --pink: #a78bfa;
+  --pink-dark: #8b5cf6;
+
+  --text-strong: #4b3f72;
+}
+
+/* PEACH */
+body.peach-theme {
+  --bg-main: linear-gradient(135deg, #ffe4e6, #fff7f5);
+
+  --card-bg: linear-gradient(135deg, #ffffff, #fff1ec);
+
+  --olive: #fecaca;
+  --olive-dark: #fca5a5;
+
+  --pink: #fb7185;
+  --pink-dark: #f43f5e;
+
+  --text-strong: #6d4c41;
+}
+
