@@ -162,7 +162,7 @@ li {
 
 /* ================= RESPONSIVE ================= */
 
-/* 📱 MOBILE */
+/*  MOBILE */
 @media (max-width: 480px) {
   body {
     padding: 10px;
